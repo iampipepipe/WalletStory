@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/transaction_id"
+            android:title="@string/transaction_menu">
+
+        </item>
+
+        <item
+            android:id="@+id/categories_id"
+            android:title="@string/categories_menu">
+
+        </item>
+
+    </group>
+
+</menu>

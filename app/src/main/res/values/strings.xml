@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Wallet Story</string>
+    <string name="title_main">Overview</string>
+    <string name="slide_1_img">slide_1_img</string>
+    <string name="slide_1_title">Heading 01</string>
+    <string name="slide_1_desc">Description 01</string>
+    <string name="slide_2_img">slide_2_img</string>
+    <string name="slide_2_title">Heading 02</string>
+    <string name="slide_2_desc">Description 02</string>
+    <string name="slide_3_img">slide_3_img</string>
+    <string name="slide_3_title">Heading 03</string>
+    <string name="slide_3_desc">Description 03</string>
+    <string name="Next">NEXT</string>
+    <string name="Skip">SKIP</string>
+    <string name="Start">GOT IT</string>
+    <string name="user_name">Panadda K.</string>
+    <string name="user_email">gifts2giftpnd@gmail.com</string>
+    <string name="transaction_menu">Transactions</string>
+    <string name="categories_menu">Categories</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+</resources>
