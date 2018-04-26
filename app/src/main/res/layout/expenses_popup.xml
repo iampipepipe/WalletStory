@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:id="@+id/frameIn"
+        android:id="@+id/frameEx"
         android:layout_width="289dp"
         android:layout_height="262dp"
         android:layout_marginBottom="8dp"
@@ -25,7 +25,7 @@
             android:id="@+id/lauoutInput"
             android:layout_width="292dp"
             android:layout_height="match_parent"
-            android:background="#A3FEBA">
+            android:background="#FFA4A4">
 
             <TextView
                 android:id="@+id/textDateIn"
@@ -56,7 +56,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
-                android:text="INCOME"
+                android:text="EXPENSE"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -129,7 +129,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/spinnerCategoryIn" />
 
             <Button
-                android:id="@+id/buttonSaveIn"
+                android:id="@+id/buttonSaveEx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"
@@ -141,7 +141,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editDescriptionIn" />
 
             <Button
-                android:id="@+id/buttonCancelIn"
+                android:id="@+id/buttonCancelEx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="35dp"

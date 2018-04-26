@@ -1,6 +1,7 @@
 package com.example.x.walletstory;
 
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,8 +71,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void addIncome(View v){
-        FrameLayout frame = (FrameLayout)findViewById(R.id.frame);
+        FrameLayout frame = (FrameLayout)findViewById(R.id.frameIn);
+
         frame.setVisibility(View.VISIBLE);
+
+        FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
+        frame2.setVisibility(View.INVISIBLE);
         /*mydb.addRecord("food",30,"06-04-2018");
             datas.add(mydb.getRecord(mydb.getRecordCount()));
         adapter = new MyAdapter(this,datas);
@@ -79,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void addExpense(View v){
+        FrameLayout frame = (FrameLayout)findViewById(R.id.frameEx);
+
+        frame.setVisibility(View.VISIBLE);
+        FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
+        frame1.setVisibility(View.INVISIBLE);
         /*mydb.addRecord("tea",-35,"06-04-2018");
         datas.add(mydb.getRecord(mydb.getRecordCount()));
         adapter = new MyAdapter(this,datas);
@@ -86,13 +97,17 @@ public class MainActivity extends AppCompatActivity {
         lv.setAdapter(adapter);*/
     }
     public void clickSave(View v){
-        FrameLayout frame = (FrameLayout)findViewById(R.id.frame);
-        frame.setVisibility(View.INVISIBLE);
+        FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
+        frame1.setVisibility(View.INVISIBLE);
+        FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
+        frame2.setVisibility(View.INVISIBLE);
 
 
     }
     public void clickCancel(View v){
-        FrameLayout frame = (FrameLayout)findViewById(R.id.frame);
-        frame.setVisibility(View.INVISIBLE);
+        FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
+        frame1.setVisibility(View.INVISIBLE);
+        FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
+        frame2.setVisibility(View.INVISIBLE);
     }
 }
