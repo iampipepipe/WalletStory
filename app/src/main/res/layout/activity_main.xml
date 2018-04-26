@@ -43,23 +43,23 @@
             android:id="@+id/floatingItemAction_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="addIncome"
             android:src="@drawable/add"
+            app:fab_colorNormal="#27DE55"
+            app:fab_colorPressed="#7CEB98"
             app:fab_label="Incomes"
-            app:fab_size="mini"
-            app:fab_colorNormal="@color/colorPrimaryDark"
-            app:fab_colorPressed="@color/colorPrimary"
-            android:onClick="addIncome"/>
+            app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingItemAction_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/add"
+            android:onClick="addExpense"
+            android:src="@drawable/fab_add"
+            app:fab_colorNormal="#FF5353"
+            app:fab_colorPressed="#FF8E8E"
             app:fab_label="Expenses"
-            app:fab_size="mini"
-            app:fab_colorNormal="@color/colorPrimaryDark"
-            app:fab_colorPressed="@color/colorPrimary"
-            android:onClick="addExpense"/>
+            app:fab_size="mini" />
 
 
 

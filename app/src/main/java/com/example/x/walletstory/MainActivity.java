@@ -10,7 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,18 +69,30 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void addIncome(View v){
-        mydb.addRecord("food",30,"06-04-2018");
+        FrameLayout frame = (FrameLayout)findViewById(R.id.frame);
+        frame.setVisibility(View.VISIBLE);
+        /*mydb.addRecord("food",30,"06-04-2018");
             datas.add(mydb.getRecord(mydb.getRecordCount()));
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);
+        lv.setAdapter(adapter);*/
 
     }
     public void addExpense(View v){
-        mydb.addRecord("tea",-35,"06-04-2018");
+        /*mydb.addRecord("tea",-35,"06-04-2018");
         datas.add(mydb.getRecord(mydb.getRecordCount()));
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);
+        lv.setAdapter(adapter);*/
+    }
+    public void clickSave(View v){
+        FrameLayout frame = (FrameLayout)findViewById(R.id.frame);
+        frame.setVisibility(View.INVISIBLE);
+
+
+    }
+    public void clickCancel(View v){
+        FrameLayout frame = (FrameLayout)findViewById(R.id.frame);
+        frame.setVisibility(View.INVISIBLE);
     }
 }
