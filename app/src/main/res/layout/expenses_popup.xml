@@ -28,17 +28,17 @@
             android:background="#FFA4A4">
 
             <TextView
-                android:id="@+id/textDateIn"
+                android:id="@+id/textDateEx"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="10dp"
                 android:text="Date"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textHeadIn" />
+                app:layout_constraintTop_toBottomOf="@+id/textHeadEx" />
 
             <EditText
-                android:id="@+id/editDateIn"
+                android:id="@+id/editDateEx"
                 android:layout_width="145dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="16dp"
@@ -46,11 +46,11 @@
                 android:background="@color/cardview_light_background"
                 android:ems="10"
                 android:inputType="date"
-                app:layout_constraintStart_toEndOf="@+id/textDateIn"
-                app:layout_constraintTop_toBottomOf="@+id/textHeadIn" />
+                app:layout_constraintStart_toEndOf="@+id/textDateEx"
+                app:layout_constraintTop_toBottomOf="@+id/textHeadEx" />
 
             <TextView
-                android:id="@+id/textHeadIn"
+                android:id="@+id/textHeadEx"
                 android:layout_width="272dp"
                 android:layout_height="33dp"
                 android:layout_marginEnd="8dp"
@@ -65,7 +65,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editAmountIn"
+                android:id="@+id/editAmountEx"
                 android:layout_width="190dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="16dp"
@@ -73,51 +73,51 @@
                 android:background="@color/cardview_light_background"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                app:layout_constraintStart_toEndOf="@+id/textAmountIn"
-                app:layout_constraintTop_toBottomOf="@+id/editDateIn" />
+                app:layout_constraintStart_toEndOf="@+id/textAmountEx"
+                app:layout_constraintTop_toBottomOf="@+id/editDateEx" />
 
             <TextView
-                android:id="@+id/textAmountIn"
+                android:id="@+id/textAmountEx"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:text="Amount"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textDateIn" />
+                app:layout_constraintTop_toBottomOf="@+id/textDateEx" />
 
-            <Spinner
-                android:id="@+id/spinnerCategoryIn"
+            <EditText
+                android:id="@+id/editCategoryEx"
                 android:layout_width="191dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/cardview_light_background"
-                app:layout_constraintStart_toEndOf="@+id/textCategoryIn"
-                app:layout_constraintTop_toBottomOf="@+id/editAmountIn" />
+                app:layout_constraintStart_toEndOf="@+id/textCategoryEx"
+                app:layout_constraintTop_toBottomOf="@+id/editAmountEx" />
 
             <TextView
-                android:id="@+id/textCategoryIn"
+                android:id="@+id/textCategoryEx"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:text="Category"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textAmountIn" />
+                app:layout_constraintTop_toBottomOf="@+id/textAmountEx" />
 
             <TextView
-                android:id="@+id/textDescriptionIn"
+                android:id="@+id/textDescriptionEx"
                 android:layout_width="73dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:text="Description"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textCategoryIn" />
+                app:layout_constraintTop_toBottomOf="@+id/textCategoryEx" />
 
             <EditText
-                android:id="@+id/editDescriptionIn"
+                android:id="@+id/editDescriptionEx"
                 android:layout_width="169dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="16dp"
@@ -125,8 +125,8 @@
                 android:background="@color/cardview_light_background"
                 android:ems="10"
                 android:inputType="textMultiLine"
-                app:layout_constraintStart_toEndOf="@+id/textDescriptionIn"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerCategoryIn" />
+                app:layout_constraintStart_toEndOf="@+id/textDescriptionEx"
+                app:layout_constraintTop_toBottomOf="@+id/editCategoryEx" />
 
             <Button
                 android:id="@+id/buttonSaveEx"
@@ -135,10 +135,10 @@
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="10dp"
                 android:background="#4BFE78"
-                android:onClick="clickSave"
+                android:onClick="clickSaveEx"
                 android:text="SAVE"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editDescriptionIn" />
+                app:layout_constraintTop_toBottomOf="@+id/editDescriptionEx" />
 
             <Button
                 android:id="@+id/buttonCancelEx"
@@ -150,7 +150,7 @@
                 android:onClick="clickCancel"
                 android:text="CANCEL"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editDescriptionIn" />
+                app:layout_constraintTop_toBottomOf="@+id/editDescriptionEx" />
 
         </android.support.constraint.ConstraintLayout>
     </FrameLayout>

@@ -86,8 +86,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textDateIn" />
 
-            <Spinner
-                android:id="@+id/spinnerCategoryIn"
+            <EditText
+                android:id="@+id/editCategoryIn"
                 android:layout_width="191dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="8dp"
@@ -126,7 +126,7 @@
                 android:ems="10"
                 android:inputType="textMultiLine"
                 app:layout_constraintStart_toEndOf="@+id/textDescriptionIn"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerCategoryIn" />
+                app:layout_constraintTop_toBottomOf="@+id/editCategoryIn" />
 
             <Button
                 android:id="@+id/buttonSaveIn"
@@ -135,7 +135,7 @@
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="10dp"
                 android:background="#4BFE78"
-                android:onClick="clickSave"
+                android:onClick="clickSaveIn"
                 android:text="SAVE"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editDescriptionIn" />

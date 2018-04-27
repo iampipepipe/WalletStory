@@ -2,11 +2,8 @@ package com.example.x.walletstory;
 
 import android.content.Intent;
 
-import android.support.constraint.ConstraintLayout;
-
 import android.support.annotation.NonNull;
 
-import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,14 +11,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-
-import android.widget.PopupWindow;
-import android.widget.TextView;
 
 import android.widget.Toast;
 
@@ -122,15 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
         frame2.setVisibility(View.INVISIBLE);
-        /*mydb.addRecord("food",30,"06-04-2018");
-            datas.add(mydb.getRecord(mydb.getRecordCount()));
 
-        mydb.addRecord("food",30,"06-04-2018");
-        datas.add(mydb.getRecord(mydb.getRecordCount()));
-
-        adapter = new MyAdapter(this,datas);
-        lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);*/
 
     }
     public void addExpense(View v){
@@ -139,18 +125,55 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         frame.setVisibility(View.VISIBLE);
         FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
         frame1.setVisibility(View.INVISIBLE);
-        /*mydb.addRecord("tea",-35,"06-04-2018");
-        datas.add(mydb.getRecord(mydb.getRecordCount()));
-        adapter = new MyAdapter(this,datas);
-        lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);*/
+
     }
-    public void clickSave(View v){
+    public void clickSaveIn(View v){
         FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
         frame1.setVisibility(View.INVISIBLE);
-        FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
+
+        EditText editInDate = (EditText)findViewById(R.id.editDateEx);
+        EditText editInAmount = (EditText)findViewById(R.id.editAmountIn);
+        EditText editInCategory = (EditText)findViewById(R.id.editCategoryIn);
+        String incomeDate = editInDate.getText().toString();
+        String incomeAmount = editInAmount.getText().toString();
+        String incomeCategory = editInCategory.getText().toString();
+
+        int incomeAmountInteger = Integer.parseInt(incomeAmount);
+
+
+        mydb.addRecord(incomeCategory,incomeAmountInteger,incomeDate);
+        datas.add(mydb.getRecord(mydb.getRecordCount()));
+
+        adapter = new MyAdapter(this,datas);
+        lv = (ListView) findViewById(R.id.listView);
+        lv.setAdapter(adapter);
+
+
+
+
+    }
+
+    public void clickSaveEx(View v) {
+
+        FrameLayout frame2 = (FrameLayout) findViewById(R.id.frameEx);
         frame2.setVisibility(View.INVISIBLE);
 
+        EditText editExDate = (EditText)findViewById(R.id.editDateEx);
+        EditText editExAmount = (EditText)findViewById(R.id.editAmountEx);
+        EditText editExCategory = (EditText)findViewById(R.id.editCategoryEx);
+        String ExpenseDate = editExDate.getText().toString();
+        String ExpenseAmount = editExAmount.getText().toString();
+        String ExpenseCategory = editExCategory.getText().toString();
+
+        int ExpenseAmountInteger = -Integer.parseInt(ExpenseAmount);
+
+
+        mydb.addRecord(ExpenseCategory,ExpenseAmountInteger,ExpenseDate);
+        datas.add(mydb.getRecord(mydb.getRecordCount()));
+
+        adapter = new MyAdapter(this,datas);
+        lv = (ListView) findViewById(R.id.listView);
+        lv.setAdapter(adapter);
 
     }
     public void clickCancel(View v){
