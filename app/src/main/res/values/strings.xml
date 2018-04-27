@@ -19,4 +19,12 @@
     <string name="categories_menu">Categories</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
+    <string name="expenses">Expenses</string>
+    <string name="incomes">Incomes</string>
+    <string name="categories_image">Categories_img</string>
+    <string name="categories_title">Categories Title 01</string>
+    <string name="title_activity_categories">Categories</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
