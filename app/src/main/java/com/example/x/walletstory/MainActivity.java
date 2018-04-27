@@ -1,11 +1,11 @@
 package com.example.x.walletstory;
 
 import android.content.Intent;
-<<<<<<< HEAD
+
 import android.support.constraint.ConstraintLayout;
-=======
+
 import android.support.annotation.NonNull;
->>>>>>> X
+
 import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,12 +19,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-<<<<<<< HEAD
+
 import android.widget.PopupWindow;
 import android.widget.TextView;
-=======
+
 import android.widget.Toast;
->>>>>>> X
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void addIncome(View v){
-<<<<<<< HEAD
+
         FrameLayout frame = (FrameLayout)findViewById(R.id.frameIn);
 
         frame.setVisibility(View.VISIBLE);
@@ -124,10 +124,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         frame2.setVisibility(View.INVISIBLE);
         /*mydb.addRecord("food",30,"06-04-2018");
             datas.add(mydb.getRecord(mydb.getRecordCount()));
-=======
+
         mydb.addRecord("food",30,"06-04-2018");
         datas.add(mydb.getRecord(mydb.getRecordCount()));
->>>>>>> X
+
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);*/

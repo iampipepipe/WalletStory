@@ -10,6 +10,15 @@
 
     <include layout="@layout/activity_main"/>
 
+    <include
+        layout="@layout/incomes_popup"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="136dp" />
+    <include
+        layout="@layout/expenses_popup"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="136dp" />
+
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
@@ -20,15 +29,6 @@
         app:menu="@menu/navigation_menu">
 
     </android.support.design.widget.NavigationView>
-
-    <include
-        layout="@layout/incomes_popup"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="136dp" />
-    <include
-        layout="@layout/expenses_popup"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="136dp" />
 
 
 </android.support.v4.widget.DrawerLayout>
