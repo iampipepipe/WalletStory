@@ -16,8 +16,8 @@ import java.util.List;
 public class CategoriesActivity extends AppCompatActivity {
     Toolbar toolbar;
     TabLayout tabLayout;
-    TabItem tabItem_01, tabItem_02;
     ViewPager viewPager;
+    ViewPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,39 +26,22 @@ public class CategoriesActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /* tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabItem_01 = (TabItem) findViewById(R.id.Expenses_tab);
-        tabItem_02 = (TabItem) findViewById(R.id.Incomes_tab);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        setupViewPager(viewPager); */
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        /* Add Fragments */
+        adapter.addFragment(new ExpensesFragment(), "Expenses");
+        adapter.addFragment(new IncomesFragment(), "Incomes");
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private void setupViewPager(ViewPager viewPager) {
-
-    }
 }
 
-/*class ViewPagerAdapter extends FragmentPagerAdapter {
-    private final List<Fragment> mFragmentList = new ArrayList<>();
-
-    public ViewPagerAdapter(FragmentManager manager) {
-        super(manager);
-    }
-
-    @Override
-    public Fragment getItem(int position) {
-        return mFragmentList.get(position);
-    }
-
-    @Override
-    public int getCount() {
-        return mFragmentList.size();
-    }
-
-    public void addFragment(Fragment fragment) {
-        mFragmentList.add(fragment);
-    }
-}*/
 
