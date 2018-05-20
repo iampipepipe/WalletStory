@@ -26,6 +26,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.x.walletstory.MainActivity" />
         </activity>
+        <activity
+            android:name=".AddCategoryActivity"
+            android:label="@string/title_activity_add_category"
+            android:parentActivityName=".CategoriesActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.x.walletstory.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

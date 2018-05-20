@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Transaction clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.categories_id :
-                Toast.makeText(this, "Categories clicked", Toast.LENGTH_SHORT).show();
                 Intent categories = new Intent();
                 categories.setClass(MainActivity.this, CategoriesActivity.class);
                 startActivity(categories);
@@ -147,9 +146,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
-
-
-
 
     }
 

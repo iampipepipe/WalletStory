@@ -1,17 +1,14 @@
 package com.example.x.walletstory;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class CategoriesActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -37,11 +34,27 @@ public class CategoriesActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.categories_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.new_category_id :
+                Intent addCategories = new Intent();
+                addCategories.setClass(this, AddCategoryActivity.class);
+                startActivity(addCategories);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 
 

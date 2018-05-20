@@ -4,32 +4,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/item_categories">
 
 
     <ImageView
-        android:id="@+id/img_expenses"
+        android:id="@+id/img_categories"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        android:contentDescription="@string/img_expenses" />
+        android:contentDescription="@string/img_expenses"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="25dp" >
+        android:layout_marginStart="30dp" >
 
         <TextView
-            android:id="@+id/title_expenses"
+            android:id="@+id/title_categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/expenses"
             android:layout_marginTop="25dp"
-            android:textSize="16sp"/>
+            android:text="@string/expenses"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/desc_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/expenses"
+            android:textSize="14sp" />
+
 
     </LinearLayout>
 
