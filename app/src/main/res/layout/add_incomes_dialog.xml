@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/income_cardview"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="80dp">
+
+        <TextView
+            android:id="@+id/income_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="5dp"
+            android:text="@string/income"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/date_imgview"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="70dp"
+            android:contentDescription="@string/date_imgview"
+            android:src="@drawable/calendar"
+            android:tint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/income_date_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+            android:hint="@string/date"
+            android:inputType="date"
+            android:selectAllOnFocus="false"
+            android:singleLine="false" />
+
+        <ImageView
+            android:id="@+id/money_imgview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="130dp"
+            android:contentDescription="@string/money_imgview"
+            android:src="@drawable/money"
+            android:tint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/income_costs_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="120dp"
+            android:ems="10"
+            android:hint="@string/costs"
+            android:inputType="number" />
+
+        <ImageView
+            android:id="@+id/category_imgview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="190dp"
+            android:contentDescription="@string/category_imgview"
+            android:src="@drawable/wallet"
+            android:tint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/income_category_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="180dp"
+            android:ems="10"
+            android:hint="@string/category"
+            android:inputType="text" />
+
+        <ImageView
+            android:id="@+id/note_imgview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="250dp"
+            android:contentDescription="@string/category_imgview"
+            android:src="@drawable/note"
+            android:tint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/income_note_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="240dp"
+            android:ems="10"
+            android:hint="@string/note"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="300dp"
+            android:background="@android:color/transparent"
+            android:onClick="saveIncome"
+            android:text="@string/save"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="300dp"
+            android:background="@android:color/transparent"
+            android:onClick="cancelIncome"
+            android:text="@string/cancel"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

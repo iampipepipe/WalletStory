@@ -1,18 +1,24 @@
 package com.example.x.walletstory;
 
+import android.app.Dialog;
 import android.content.Intent;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ListView;
@@ -111,25 +117,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void addIncome(View v){
 
-        FrameLayout frame = (FrameLayout)findViewById(R.id.frameIn);
+        /*FrameLayout frame = (FrameLayout)findViewById(R.id.frameIn);
 
         frame.setVisibility(View.VISIBLE);
 
         FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
-        frame2.setVisibility(View.INVISIBLE);
+        frame2.setVisibility(View.INVISIBLE);*/
+
+        Dialog incomeDialog = new Dialog(MainActivity.this);
+        incomeDialog.setContentView(R.layout.add_incomes_dialog);
+        incomeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        incomeDialog.show();
 
 
     }
     public void addExpense(View v){
-        FrameLayout frame = (FrameLayout)findViewById(R.id.frameEx);
+        /*FrameLayout frame = (FrameLayout)findViewById(R.id.frameEx);
 
         frame.setVisibility(View.VISIBLE);
         FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
-        frame1.setVisibility(View.INVISIBLE);
+        frame1.setVisibility(View.INVISIBLE);*/
+
+        Dialog expenseDialog = new Dialog(MainActivity.this);
+        expenseDialog.setContentView(R.layout.add_expenses_dialog);
+        expenseDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        expenseDialog.show();
 
     }
-    public void clickSaveIn(View v){
-        FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
+    public void saveIncome(View v){
+        /*FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
         frame1.setVisibility(View.INVISIBLE);
 
         EditText editInAmount = (EditText)findViewById(R.id.editAmountIn);
@@ -140,18 +156,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String incomeDescription = editInDescription.getText().toString();
         String incomeCategory = editInCategory.getText().toString();
 
+<<<<<<< HEAD
 
 
         mydb.addTransactionRecord(Calendar.getInstance().getTime(),incomeAmount,incomeDescription,incomeCategory,"income");
         datas.add(mydb.getTransactionRecord(mydb.getTransactionRecordCount()));
+=======
+        int incomeAmountInteger = Integer.parseInt(incomeAmount);*/
+
+
+
+        /*mydb.addRecord(incomeCategory,incomeAmountInteger,incomeDate);
+        datas.add(mydb.getRecord(mydb.getRecordCount()));
+
+        adapter = new MyAdapter(this,datas);
+        lv = (ListView) findViewById(R.id.listView);
+        lv.setAdapter(adapter);*/
+
+        Dialog incomeDialog = new Dialog(MainActivity.this);
+        incomeDialog.setContentView(R.layout.add_incomes_dialog);
+
+        EditText inputDate = (EditText) incomeDialog.findViewById(R.id.income_date_input);
+        EditText inputCosts = (EditText) incomeDialog.findViewById(R.id.income_costs_input);
+        EditText inputCategory = (EditText) incomeDialog.findViewById(R.id.income_category_input);
+
+        String incomeDate = inputDate.getText().toString();
+        String incomeCosts = inputCosts.getText().toString();
+        String incomeCategory = inputCategory.getText().toString();
+
+        int incomeCostsInt = Integer.parseInt(incomeCosts);
+
+
+        mydb.addRecord(incomeCategory, incomeCostsInt, incomeDate);
+        datas.add(mydb.getRecord(mydb.getRecordCount()));
+>>>>>>> master
 
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
 
+        incomeDialog.hide();
+
     }
 
-    public void clickSaveEx(View v) {
+    public void saveExpense(View v) {
 
         FrameLayout frame2 = (FrameLayout) findViewById(R.id.frameEx);
         frame2.setVisibility(View.INVISIBLE);
@@ -173,10 +221,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         lv.setAdapter(adapter);
 
     }
-    public void clickCancel(View v){
-        FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
+    public void cancelIncome(View v){
+        /*FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
         frame1.setVisibility(View.INVISIBLE);
         FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
-        frame2.setVisibility(View.INVISIBLE);
+        frame2.setVisibility(View.INVISIBLE);*/
+
+
     }
 }
