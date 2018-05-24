@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ListView lv;
     private MyAdapter adapter;
 
+    private Dialog incomeDialog;
     private List<Data> datas = new ArrayList<>();
     private Data detail;
 
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
         frame2.setVisibility(View.INVISIBLE);*/
 
-        Dialog incomeDialog = new Dialog(MainActivity.this);
+        incomeDialog = new Dialog(MainActivity.this);
         incomeDialog.setContentView(R.layout.add_incomes_dialog);
         incomeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         incomeDialog.show();
@@ -145,51 +146,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void saveIncome(View v){
-        /*FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
-        frame1.setVisibility(View.INVISIBLE);
 
-        EditText editInAmount = (EditText)findViewById(R.id.editAmountIn);
-        EditText editInDescription = (EditText)findViewById(R.id.editDescriptionIn);
-        EditText editInCategory = (EditText)findViewById(R.id.editCategoryIn);
+
+        EditText editInAmount = (EditText) incomeDialog.findViewById(R.id.income_costs_input);
+        EditText editInDescription = (EditText) incomeDialog.findViewById(R.id.income_category_input);
+        EditText editInCategory = (EditText) incomeDialog.findViewById(R.id.income_note_input);
 
         double incomeAmount = Double.parseDouble(editInAmount.getText().toString());
         String incomeDescription = editInDescription.getText().toString();
         String incomeCategory = editInCategory.getText().toString();
 
-<<<<<<< HEAD
-
 
         mydb.addTransactionRecord(Calendar.getInstance().getTime(),incomeAmount,incomeDescription,incomeCategory,"income");
         datas.add(mydb.getTransactionRecord(mydb.getTransactionRecordCount()));
-=======
-        int incomeAmountInteger = Integer.parseInt(incomeAmount);*/
 
-
-
-        /*mydb.addRecord(incomeCategory,incomeAmountInteger,incomeDate);
-        datas.add(mydb.getRecord(mydb.getRecordCount()));
-
-        adapter = new MyAdapter(this,datas);
-        lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);*/
-
-        Dialog incomeDialog = new Dialog(MainActivity.this);
-        incomeDialog.setContentView(R.layout.add_incomes_dialog);
-
-        EditText inputDate = (EditText) incomeDialog.findViewById(R.id.income_date_input);
-        EditText inputCosts = (EditText) incomeDialog.findViewById(R.id.income_costs_input);
-        EditText inputCategory = (EditText) incomeDialog.findViewById(R.id.income_category_input);
-
-        String incomeDate = inputDate.getText().toString();
-        String incomeCosts = inputCosts.getText().toString();
-        String incomeCategory = inputCategory.getText().toString();
-
-        int incomeCostsInt = Integer.parseInt(incomeCosts);
-
-
-        mydb.addRecord(incomeCategory, incomeCostsInt, incomeDate);
-        datas.add(mydb.getRecord(mydb.getRecordCount()));
->>>>>>> master
 
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
