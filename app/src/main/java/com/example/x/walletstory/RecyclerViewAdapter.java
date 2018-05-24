@@ -23,10 +23,10 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     Context mContext;
-    List<Categories> mData;
+    List<Data> mData;
     Dialog myDialog;
 
-    public RecyclerViewAdapter(Context mContext, List<Categories> mData) {
+    public RecyclerViewAdapter(Context mContext, List<Data> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -56,9 +56,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     }
                 });
 
-                dialog_title.setText(mData.get(vHolder.getAdapterPosition()).getTitle());
-                dialog_type.setText(mData.get(vHolder.getAdapterPosition()).getDesc());
-                dialog_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getImage());
+                dialog_title.setText(mData.get(vHolder.getAdapterPosition()).getCategory());
+                dialog_type.setText(mData.get(vHolder.getAdapterPosition()).getType());
+                dialog_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getIcon());
 
                 myDialog.show();
             }
@@ -69,9 +69,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.categories_title.setText(mData.get(position).getTitle());
-        holder.categories_desc.setText(mData.get(position).getDesc());
-        holder.categories_img.setImageResource(mData.get(position).getImage());
+        holder.categories_title.setText(mData.get(position).getCategory());
+        holder.categories_desc.setText(mData.get(position).getType());
+        holder.categories_img.setImageResource(mData.get(position).getIcon());
     }
 
     @Override

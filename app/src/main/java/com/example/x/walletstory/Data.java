@@ -13,6 +13,7 @@ public class Data {
     private String type;
     private int icon;
 
+    public Data() { }
 
     public Data(int id, int date, int month, int year, double amount, String description, String category, String type, int icon) {
         this.id = id;
@@ -63,6 +64,12 @@ public class Data {
 
     public Data(int id, String category, int icon, String type) {
         this.id = id;
+        this.category = category;
+        this.type = type;
+        this.icon = icon;
+    }
+
+    public Data(String category, String type, int icon) {
         this.category = category;
         this.type = type;
         this.icon = icon;

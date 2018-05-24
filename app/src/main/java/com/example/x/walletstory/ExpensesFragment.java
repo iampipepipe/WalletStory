@@ -1,5 +1,6 @@
 package com.example.x.walletstory;
 
+import android.database.Cursor;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ import java.util.List;
 public class ExpensesFragment extends Fragment {
     View v;
     private RecyclerView myRecyclerView;
-    private List<Categories> expensesList = new ArrayList<>();
+
 
     public ExpensesFragment() {
 
@@ -29,7 +30,9 @@ public class ExpensesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        expensesList.add(new Categories("Food & Drink", "Expense", R.mipmap.food));
+
+
+        /*expensesList.add(new Categories("Food & Drink", "Expense", R.mipmap.food));
         expensesList.add(new Categories("Shopping","Expense", R.mipmap.shopping));
         expensesList.add(new Categories("Transport","Expense", R.mipmap.transport));
         expensesList.add(new Categories("Home","Expense", R.mipmap.home));
@@ -45,14 +48,14 @@ public class ExpensesFragment extends Fragment {
         expensesList.add(new Categories("Sport & Hobbies","Expense", R.mipmap.sport));
         expensesList.add(new Categories("Beauty","Expense", R.mipmap.beauty));
         expensesList.add(new Categories("Work","Expense", R.mipmap.work));
-        expensesList.add(new Categories("Others","Expense", R.mipmap.transaction));
+        expensesList.add(new Categories("Others","Expense", R.mipmap.transaction));*/
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.categories_fragment, container, false);
         myRecyclerView = (RecyclerView) v.findViewById(R.id.categories_recyclerview);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), expensesList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), new DataList().getExpensesList());
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
 

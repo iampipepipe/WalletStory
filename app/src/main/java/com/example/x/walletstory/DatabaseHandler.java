@@ -39,6 +39,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
 
+    public DatabaseHandler(ExpensesFragment expensesFragment){
+        super(expensesFragment.getContext(),DATABASE_NAME,null,DATABASE_VERSION);
+    }
+    public DatabaseHandler(IncomesFragment incomesFragment){
+        super(incomesFragment.getContext(),DATABASE_NAME,null,DATABASE_VERSION);
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         //CREATE TRANSACTION TABLE
@@ -153,7 +160,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /*------------------------------------------------------------------------------------------------------------------------------------*/
     //category tools
     /*------------------------------------------------------------------------------------------------------------------------------------*/
-    public void addCategoryRecord(String category,int icon,String type){
+    public void addCategoryRecord(String category,String type,int icon){
         ContentValues values = new ContentValues();
 
         values.put(CATEGORY_NAME,category);
@@ -167,15 +174,30 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Cursor getIncomeCategoryAllRecord() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String[] columns = { "_id",CATEGORY_NAME,CATEGORY_ICON,CATEGORY_TYPE};
-        Cursor cur = db.query(TABLE_CATEGORY,columns,null,null,null,CATEGORY_TYPE + " == income",null);
+        Cursor cur = db.rawQuery("SELECT * FROM "+ TABLE_CATEGORY + " WHERE " + CATEGORY_TYPE + " == 'income' ",null);
         return cur;
     }
 
     public Cursor getExpenseCategoryAllRecord() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String[] columns = { "_id",CATEGORY_NAME,CATEGORY_ICON,CATEGORY_TYPE};
-        Cursor cur = db.query(TABLE_CATEGORY,columns,null,null,null,CATEGORY_TYPE + " == expense",null);
+        Cursor cur = db.rawQuery("SELECT * FROM "+ TABLE_CATEGORY + " WHERE " + CATEGORY_TYPE + " == 'expense' ",null);
         return cur;
+    }
+
+
+    public static String getTableCategory() {
+        return TABLE_CATEGORY;
+    }
+
+    public static String getCategoryName() {
+        return CATEGORY_NAME;
+    }
+
+    public static String getCategoryIcon() {
+        return CATEGORY_ICON;
+    }
+
+    public static String getCategoryType() {
+        return CATEGORY_TYPE;
     }
 }

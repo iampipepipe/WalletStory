@@ -2,6 +2,8 @@ package com.example.x.walletstory;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.view.PagerAdapter;
@@ -18,6 +20,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class WelcomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -26,6 +32,14 @@ public class WelcomeActivity extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
+
+    private DatabaseHandler mydb = new DatabaseHandler(this);
+    private List<Data> dataIn = new ArrayList<>();
+    private List<Data> dataEx = new ArrayList<>();
+    private DataList data = new DataList();
+    private Cursor cur;
+
+    private static final String PREF_NAME = "MyPref";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +63,78 @@ public class WelcomeActivity extends AppCompatActivity {
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnSkip = (Button) findViewById(R.id.button_skip);
         btnNext = (Button) findViewById(R.id.button_next);
+
+        SharedPreferences pref = getSharedPreferences(PREF_NAME,MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        int counter = pref.getInt("counter",1);
+
+        if(counter==1) {
+
+            mydb.getWritableDatabase();
+            //first income category
+            mydb.addCategoryRecord("Salary", "income", R.mipmap.salary);
+            mydb.addCategoryRecord("Selling", "income", R.mipmap.sale);
+            mydb.addCategoryRecord("Award", "income", R.mipmap.award);
+            mydb.addCategoryRecord("Interest Money", "income", R.mipmap.interest);
+            mydb.addCategoryRecord("Gifts", "income", R.mipmap.gift);
+            mydb.addCategoryRecord("Others", "income", R.mipmap.transaction);
+
+            //first expense category
+            mydb.addCategoryRecord("Food & Drink", "expense", R.mipmap.food);
+            mydb.addCategoryRecord("Shopping", "expense", R.mipmap.shopping);
+            mydb.addCategoryRecord("Transport", "expense", R.mipmap.transport);
+            mydb.addCategoryRecord("Home", "expense", R.mipmap.home);
+            mydb.addCategoryRecord("Entertainment", "expense", R.mipmap.entertainment);
+            mydb.addCategoryRecord("Bills & Fees", "expense", R.mipmap.bills);
+            mydb.addCategoryRecord("Car", "expense", R.mipmap.car);
+            mydb.addCategoryRecord("Travel", "expense", R.mipmap.travel);
+            mydb.addCategoryRecord("Family & Personal", "expense", R.mipmap.family);
+            mydb.addCategoryRecord("Health", "expense", R.mipmap.health);
+            mydb.addCategoryRecord("Education", "expense", R.mipmap.education);
+            mydb.addCategoryRecord("Groceries", "expense", R.mipmap.groceries);
+            mydb.addCategoryRecord("Gifts", "expense", R.mipmap.gift);
+            mydb.addCategoryRecord("Sport & Hobbies", "expense", R.mipmap.sport);
+            mydb.addCategoryRecord("Beauty", "expense", R.mipmap.beauty);
+            mydb.addCategoryRecord("Work", "expense", R.mipmap.work);
+            mydb.addCategoryRecord("Others", "expense", R.mipmap.transaction);
+
+            mydb.close();
+        }
+        editor.putInt("counter",++counter);
+        editor.commit();
+
+
+        mydb.getWritableDatabase();
+        cur = mydb.getIncomeCategoryAllRecord();
+        if (cur.moveToFirst()) {
+            while (!cur.isAfterLast()) {
+                int nameCol = cur.getColumnIndex(mydb.getCategoryName());
+                int typeCol = cur.getColumnIndex(mydb.getCategoryType());
+                int iconCol = cur.getColumnIndex(mydb.getCategoryIcon());
+                dataIn.add(new Data(cur.getString(nameCol), cur.getString(typeCol), cur.getInt(iconCol)));
+                cur.moveToNext();
+            }
+        }
+
+        data.setIncomesList(dataIn);
+
+
+
+        cur = mydb.getExpenseCategoryAllRecord();
+        if (cur.moveToFirst()) {
+            while (!cur.isAfterLast()) {
+                int nameCol = cur.getColumnIndex(mydb.getCategoryName());
+                int typeCol = cur.getColumnIndex(mydb.getCategoryType());
+                int iconCol = cur.getColumnIndex(mydb.getCategoryIcon());
+                dataEx.add(new Data(cur.getString(nameCol), cur.getString(typeCol), cur.getInt(iconCol)));
+                cur.moveToNext();
+            }
+        }
+
+        data.setExpensesList(dataEx);
+
+        mydb.close();
+
 
         /* Layouts of all welcome sliders */
         layouts = new int[] {
