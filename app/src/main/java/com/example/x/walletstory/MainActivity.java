@@ -21,19 +21,20 @@ import android.widget.Toast;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    Toolbar toolbar;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    DatabaseHandler mydb = new DatabaseHandler(this);
-    ListView lv;
-    MyAdapter adapter;
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private DatabaseHandler mydb = new DatabaseHandler(this);
+    private ListView lv;
+    private MyAdapter adapter;
 
     private List<Data> datas = new ArrayList<>();
-    public static Data detail;
+    private Data detail;
 
 
     @Override
@@ -52,12 +53,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+
         //show database all
 
 
 
-        for(int i=1;i<=mydb.getRecordCount();i++){
-            datas.add(mydb.getRecord(i));
+        for(int i=1;i<=mydb.getTransactionRecordCount();i++){
+            datas.add(mydb.getTransactionRecord(i));
         }
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
@@ -130,18 +132,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
         frame1.setVisibility(View.INVISIBLE);
 
-        EditText editInDate = (EditText)findViewById(R.id.editDateEx);
         EditText editInAmount = (EditText)findViewById(R.id.editAmountIn);
+        EditText editInDescription = (EditText)findViewById(R.id.editDescriptionIn);
         EditText editInCategory = (EditText)findViewById(R.id.editCategoryIn);
-        String incomeDate = editInDate.getText().toString();
-        String incomeAmount = editInAmount.getText().toString();
+
+        double incomeAmount = Double.parseDouble(editInAmount.getText().toString());
+        String incomeDescription = editInDescription.getText().toString();
         String incomeCategory = editInCategory.getText().toString();
 
-        int incomeAmountInteger = Integer.parseInt(incomeAmount);
 
 
-        mydb.addRecord(incomeCategory,incomeAmountInteger,incomeDate);
-        datas.add(mydb.getRecord(mydb.getRecordCount()));
+        mydb.addTransactionRecord(Calendar.getInstance().getTime(),incomeAmount,incomeDescription,incomeCategory,"income");
+        datas.add(mydb.getTransactionRecord(mydb.getTransactionRecordCount()));
 
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
@@ -154,18 +156,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FrameLayout frame2 = (FrameLayout) findViewById(R.id.frameEx);
         frame2.setVisibility(View.INVISIBLE);
 
-        EditText editExDate = (EditText)findViewById(R.id.editDateEx);
         EditText editExAmount = (EditText)findViewById(R.id.editAmountEx);
+        EditText editExDescription = (EditText)findViewById(R.id.editDescriptionEx);
         EditText editExCategory = (EditText)findViewById(R.id.editCategoryEx);
-        String ExpenseDate = editExDate.getText().toString();
-        String ExpenseAmount = editExAmount.getText().toString();
-        String ExpenseCategory = editExCategory.getText().toString();
 
-        int ExpenseAmountInteger = -Integer.parseInt(ExpenseAmount);
+        double expenseAmount = -Double.parseDouble(editExAmount.getText().toString());
+        String expenseDescription = editExDescription.getText().toString();
+        String expenseCategory = editExCategory.getText().toString();
 
 
-        mydb.addRecord(ExpenseCategory,ExpenseAmountInteger,ExpenseDate);
-        datas.add(mydb.getRecord(mydb.getRecordCount()));
+        mydb.addTransactionRecord(Calendar.getInstance().getTime(),expenseAmount,expenseDescription,expenseCategory,"expense");
+        datas.add(mydb.getTransactionRecord(mydb.getTransactionRecordCount()));
 
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);

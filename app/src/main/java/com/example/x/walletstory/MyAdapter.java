@@ -21,10 +21,15 @@ public class MyAdapter extends BaseAdapter {
 
 
     static class ViewHolder {
-        TextView tvTitle;
-        TextView tvDesc;
-        TextView tvValue;
-        ImageView img;
+        TextView tvId;
+        TextView tvDate;
+        TextView tvMonth;
+        TextView tvYear;
+        TextView tvAmount;
+        TextView tvDescription;
+        TextView tvCategory;
+        TextView tvType;
+        //ImageView img;
     }
 
     @Override
@@ -48,20 +53,28 @@ public class MyAdapter extends BaseAdapter {
         if (view == null) {
             view = mLayoutInflater.inflate(R.layout.layout_detail,viewGroup,false);
             holder = new ViewHolder();
-            holder.tvTitle = (TextView)view.findViewById(R.id.txtTitle);
-            holder.tvDesc = (TextView)view.findViewById(R.id.txtDescription);
-            holder.tvValue = (TextView)view.findViewById(R.id.txtValue);
-          //  holder.img = (ImageView)view.findViewById(R.id.icon);
+            holder.tvId = (TextView)view.findViewById(R.id.txtId);
+            holder.tvDate = (TextView)view.findViewById(R.id.txtDate);
+            holder.tvMonth = (TextView)view.findViewById(R.id.txtMonth);
+            holder.tvYear = (TextView)view.findViewById(R.id.txtYear);
+            holder.tvAmount = (TextView)view.findViewById(R.id.txtAmount);
+            holder.tvDescription = (TextView)view.findViewById(R.id.txtDescription);
+            holder.tvCategory = (TextView)view.findViewById(R.id.txtCategory);
+            holder.tvType = (TextView)view.findViewById(R.id.txtType);
+            //holder.img = (TextView)view.findViewById(R.id.img);
             view.setTag(holder);
         } else {
             holder = (ViewHolder)view.getTag();
         }
-        String title = mDatas.get(position).getmText1();
-        holder.tvTitle.setText(title);
-        holder.tvDesc.setText(mDatas.get(position).getmText2());
-        holder.tvValue.setText(mDatas.get(position).getValue());
-        //holder.img.setImageResource(mDatas.get(position).getmIcon());
-
+        holder.tvId.setText(Integer.toString(mDatas.get(position).getId()));
+        holder.tvDate.setText(Integer.toString(mDatas.get(position).getDate()));
+        holder.tvMonth.setText(Integer.toString(mDatas.get(position).getMonth()));
+        holder.tvYear.setText(Integer.toString(mDatas.get(position).getYear()));
+        holder.tvAmount.setText(Double.toString(mDatas.get(position).getAmount()));
+        holder.tvDescription.setText(mDatas.get(position).getDescription());
+        holder.tvCategory.setText(mDatas.get(position).getCategory());
+        holder.tvType.setText(mDatas.get(position).getType());
+        //holder.img.setText(mDatas.get(position).getId());
         return view;
     }
 
