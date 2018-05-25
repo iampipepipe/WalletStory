@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        app:srcCompat="@mipmap/heart3" android:contentDescription="@string/slide_1_img" />
+        app:srcCompat="@mipmap/heart4"
+        android:contentDescription="@string/slide_1_img" />
 
     <TextView
         android:id="@+id/slide_1_title"
@@ -22,9 +23,10 @@
         android:layout_below="@+id/slide_1_img"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:textColor="#ffff"
+        android:textColor="#ffdd00"
         android:textSize="30sp"
-        android:text="@string/slide_1_title" />
+        android:text="@string/slide_1_title"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/slide_1_desc"
@@ -34,6 +36,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:textColor="#ffff"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:text="@string/slide_1_desc" />
 </RelativeLayout>

@@ -43,7 +43,8 @@
             android:hint="@string/date"
             android:inputType="date"
             android:selectAllOnFocus="false"
-            android:singleLine="false" />
+            android:singleLine="false"
+            android:backgroundTint="@color/colorPrimaryDark"/>
 
         <ImageView
             android:id="@+id/money_imgview"
@@ -63,7 +64,8 @@
             android:layout_marginTop="120dp"
             android:ems="10"
             android:hint="@string/costs"
-            android:inputType="number" />
+            android:inputType="number"
+            android:backgroundTint="@color/colorPrimaryDark"/>
 
         <ImageView
             android:id="@+id/category_imgview"
@@ -83,7 +85,8 @@
             android:layout_marginTop="180dp"
             android:ems="10"
             android:hint="@string/category"
-            android:inputType="text" />
+            android:inputType="text"
+            android:backgroundTint="@color/colorPrimaryDark"/>
 
         <ImageView
             android:id="@+id/note_imgview"
@@ -103,7 +106,8 @@
             android:layout_marginTop="240dp"
             android:ems="10"
             android:hint="@string/note"
-            android:inputType="text" />
+            android:inputType="text"
+            android:backgroundTint="@color/colorPrimaryDark"/>
 
         <Button
             android:id="@+id/save_button"

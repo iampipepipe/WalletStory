@@ -11,26 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <ListView
-        android:id="@+id/listView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="395dp"
+        android:layout_height="512dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/toolbar"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/toolbar">
 
-    <include
-        layout="@layout/incomes_popup"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="136dp" />
-    <include
-        layout="@layout/expenses_popup"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="136dp" />
+    </android.support.v7.widget.RecyclerView>
 
     <com.github.clans.fab.FloatingActionMenu
         android:layout_width="wrap_content"
@@ -46,7 +37,8 @@
         app:menu_labels_colorNormal="#fff"
         app:menu_labels_colorPressed="@color/colorPrimary"
         app:menu_colorNormal="@color/colorPrimaryDark"
-        app:menu_colorPressed="@color/colorPrimary">
+        app:menu_colorPressed="@color/colorPrimary"
+        android:id="@+id/floatingActionMenu">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingItemAction_1"
@@ -54,8 +46,8 @@
             android:layout_height="wrap_content"
             android:onClick="addIncome"
             android:src="@drawable/add"
-            app:fab_colorNormal="#27DE55"
-            app:fab_colorPressed="#7CEB98"
+            app:fab_colorNormal="#2ECC71"
+            app:fab_colorPressed="#87D37C"
             app:fab_label="Incomes"
             app:fab_size="mini" />
 
@@ -65,7 +57,7 @@
             android:layout_height="wrap_content"
             android:onClick="addExpense"
             android:src="@drawable/fab_add"
-            app:fab_colorNormal="#FF5353"
+            app:fab_colorNormal="#F03434"
             app:fab_colorPressed="#FF8E8E"
             app:fab_label="Expenses"
             app:fab_size="mini" />

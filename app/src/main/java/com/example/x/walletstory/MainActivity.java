@@ -14,6 +14,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private List<Data> datas = new ArrayList<>();
     private Data detail;
 
+    private RecyclerView recyclerView;
+    private TransactionAdapter transactionAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +67,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //show database all
 
-
-
         for(int i=1;i<=mydb.getTransactionRecordCount();i++){
             datas.add(mydb.getTransactionRecord(i));
         }
-        adapter = new MyAdapter(this,datas);
+        /*adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);
+        lv.setAdapter(adapter);*/
+
+        transactionAdapter = new TransactionAdapter(this, datas);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(transactionAdapter);
 
     }
 
@@ -161,9 +168,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         datas.add(mydb.getTransactionRecord(mydb.getTransactionRecordCount()));
 
 
-        adapter = new MyAdapter(this,datas);
+        /*adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);
+        lv.setAdapter(adapter);*/
+
+        transactionAdapter = new TransactionAdapter(this, datas);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(transactionAdapter);
 
         incomeDialog.hide();
 
@@ -186,9 +197,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mydb.addTransactionRecord(Calendar.getInstance().getTime(),expenseAmount,expenseDescription,expenseCategory,"expense");
         datas.add(mydb.getTransactionRecord(mydb.getTransactionRecordCount()));
 
-        adapter = new MyAdapter(this,datas);
+        /*adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(adapter);
+        lv.setAdapter(adapter);*/
+
+        transactionAdapter = new TransactionAdapter(this, datas);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(transactionAdapter);
 
     }
     public void cancelIncome(View v){
@@ -196,7 +211,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         frame1.setVisibility(View.INVISIBLE);
         FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
         frame2.setVisibility(View.INVISIBLE);*/
-
 
     }
 }
