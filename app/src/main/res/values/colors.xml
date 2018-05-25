@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4BC3C4</color>
-    <color name="colorPrimaryDark">#3FB5B5</color>
+    <color name="colorPrimary">#4bc3c4</color>
+    <color name="colorPrimaryDark">#3fb5b5</color>
     <color name="colorAccent">#FF4081</color>
 
     <!-- Screens background color-->

@@ -35,6 +35,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.x.walletstory.MainActivity" />
         </activity>
+        <activity
+            android:name=".IconSelection"
+            android:label="add Icon"
+            android:parentActivityName=".AddCategoryActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.x.walletstory.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

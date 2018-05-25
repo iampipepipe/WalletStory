@@ -99,6 +99,8 @@ public class WelcomeActivity extends AppCompatActivity {
             mydb.addCategoryRecord("Others", "expense", R.mipmap.transaction);
 
             mydb.close();
+
+
         }
         editor.putInt("counter",++counter);
         editor.commit();

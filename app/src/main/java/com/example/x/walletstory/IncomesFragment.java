@@ -32,7 +32,6 @@ public class IncomesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         /*incomesList.add(new Categories("Salary","Income", R.mipmap.salary));
         incomesList.add(new Categories("Selling","Income", R.mipmap.sale));
         incomesList.add(new Categories("Award","Income", R.mipmap.award));

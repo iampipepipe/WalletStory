@@ -1,6 +1,7 @@
 package com.example.x.walletstory;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -10,11 +11,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CategoriesActivity extends AppCompatActivity {
     Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,11 @@ public class CategoriesActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+
     }
 
     @Override

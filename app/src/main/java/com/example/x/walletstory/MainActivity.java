@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private MyAdapter adapter;
 
     private Dialog incomeDialog;
+    private Dialog expenseDialog;
     private List<Data> datas = new ArrayList<>();
     private Data detail;
 
@@ -117,37 +118,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void addIncome(View v){
-
-        /*FrameLayout frame = (FrameLayout)findViewById(R.id.frameIn);
-
-        frame.setVisibility(View.VISIBLE);
-
-        FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
-        frame2.setVisibility(View.INVISIBLE);*/
-
         incomeDialog = new Dialog(MainActivity.this);
         incomeDialog.setContentView(R.layout.add_incomes_dialog);
         incomeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         incomeDialog.show();
-
-
     }
     public void addExpense(View v){
-        /*FrameLayout frame = (FrameLayout)findViewById(R.id.frameEx);
-
-        frame.setVisibility(View.VISIBLE);
-        FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
-        frame1.setVisibility(View.INVISIBLE);*/
-
-        Dialog expenseDialog = new Dialog(MainActivity.this);
+        expenseDialog = new Dialog(MainActivity.this);
         expenseDialog.setContentView(R.layout.add_expenses_dialog);
         expenseDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         expenseDialog.show();
-
     }
     public void saveIncome(View v){
-
-
         EditText editInAmount = (EditText) incomeDialog.findViewById(R.id.income_costs_input);
         EditText editInDescription = (EditText) incomeDialog.findViewById(R.id.income_category_input);
         EditText editInCategory = (EditText) incomeDialog.findViewById(R.id.income_note_input);
@@ -170,13 +152,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void saveExpense(View v) {
-
-        FrameLayout frame2 = (FrameLayout) findViewById(R.id.frameEx);
-        frame2.setVisibility(View.INVISIBLE);
-
-        EditText editExAmount = (EditText)findViewById(R.id.editAmountEx);
-        EditText editExDescription = (EditText)findViewById(R.id.editDescriptionEx);
-        EditText editExCategory = (EditText)findViewById(R.id.editCategoryEx);
+        EditText editExAmount = (EditText) expenseDialog.findViewById(R.id.expense_costs_input);
+        EditText editExDescription = (EditText) expenseDialog.findViewById(R.id.expense_category_input);
+        EditText editExCategory = (EditText) expenseDialog.findViewById(R.id.expense_note_input);
 
         double expenseAmount = -Double.parseDouble(editExAmount.getText().toString());
         String expenseDescription = editExDescription.getText().toString();
@@ -190,13 +168,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
 
+        expenseDialog.hide();
+
+
     }
-    public void cancelIncome(View v){
-        /*FrameLayout frame1 = (FrameLayout)findViewById(R.id.frameIn);
-        frame1.setVisibility(View.INVISIBLE);
-        FrameLayout frame2 = (FrameLayout)findViewById(R.id.frameEx);
-        frame2.setVisibility(View.INVISIBLE);*/
-
-
+    public void cancel(View v){
+        incomeDialog.hide();
+        expenseDialog.hide();
     }
 }

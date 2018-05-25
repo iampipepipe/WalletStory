@@ -1,11 +1,15 @@
 package com.example.x.walletstory;
 
+import android.database.Cursor;
+import android.support.v7.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataList  {
+public class DataList {
     private static List<Data> expensesList = new ArrayList<>();
     private static List<Data> incomesList = new ArrayList<>();
+
 
     public List<Data> getExpensesList() {
         return expensesList;

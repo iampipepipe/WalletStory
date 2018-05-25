@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "mydb5.db";
+    private static final String DATABASE_NAME = "mydb2.db";
 
 
     //transaction table
