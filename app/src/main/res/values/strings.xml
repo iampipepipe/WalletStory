@@ -2,14 +2,14 @@
     <string name="app_name">Wallet Story</string>
     <string name="title_main">Overview</string>
     <string name="slide_1_img">slide_1_img</string>
-    <string name="slide_1_title">Heading 01</string>
-    <string name="slide_1_desc">Description 01</string>
+    <string name="slide_1_title">WELCOME !</string>
+    <string name="slide_1_desc">This is the Wallet Story .</string>
     <string name="slide_2_img">slide_2_img</string>
-    <string name="slide_2_title">Heading 02</string>
-    <string name="slide_2_desc">Description 02</string>
+    <string name="slide_2_title">Can we help you ?</string>
+    <string name="slide_2_desc">Wallet Story can manage your personal finance .</string>
     <string name="slide_3_img">slide_3_img</string>
-    <string name="slide_3_title">Heading 03</string>
-    <string name="slide_3_desc">Description 03</string>
+    <string name="slide_3_title">REGISTER </string>
+    <string name="slide_3_desc">Enter your name</string>
     <string name="Next">NEXT</string>
     <string name="Skip">SKIP</string>
     <string name="Start">GOT IT</string>
@@ -42,4 +42,7 @@
     <string name="costs">Costs</string>
     <string name="category_imgview">category_imageview</string>
     <string name="note">Note</string>
+    <string name="dd">Day</string>
+    <string name="yyyy">Year</string>
+    <string name="mm">Month</string>
 </resources>

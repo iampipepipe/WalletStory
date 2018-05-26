@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        app:srcCompat="@mipmap/heart3"
+        app:srcCompat="@mipmap/coins"
         android:contentDescription="@string/slide_2_img" />
 
     <TextView
@@ -23,8 +23,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/slide_2_img"
         android:layout_marginTop="50dp"
-        android:textColor="#ffff"
+        android:textColor="#ffdd00"
         android:textSize="30sp"
+        android:textStyle="bold"
         android:text="@string/slide_2_title" />
 
     <TextView
@@ -35,7 +36,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:textColor="#ffff"
-        android:textSize="22sp"
+        android:textSize="18sp"
+        android:textAlignment="center"
         android:text="@string/slide_2_desc" />
 
 </RelativeLayout>

@@ -11,16 +11,12 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import android.widget.Toast;
@@ -42,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Dialog incomeDialog;
     private Dialog expenseDialog;
     private List<Data> datas = new ArrayList<>();
-    private Data detail;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +58,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //show database all
 
-
-
         for(int i=1;i<=mydb.getTransactionRecordCount();i++){
             datas.add(mydb.getTransactionRecord(i));
         }
+
         adapter = new MyAdapter(this,datas);
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
@@ -169,7 +162,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         lv.setAdapter(adapter);
 
         expenseDialog.hide();
-
 
     }
     public void cancel(View v){

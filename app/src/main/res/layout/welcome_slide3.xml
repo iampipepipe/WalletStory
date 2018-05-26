@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        app:srcCompat="@mipmap/heart3" android:contentDescription="@string/slide_3_img" />
+        app:srcCompat="@mipmap/checked"
+        android:contentDescription="@string/slide_3_img" />
 
     <TextView
         android:id="@+id/slide_3_title"

@@ -41,10 +41,6 @@ public class CategoriesActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
-
-
     }
 
     @Override
