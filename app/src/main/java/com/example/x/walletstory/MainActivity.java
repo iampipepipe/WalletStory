@@ -164,8 +164,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         expenseDialog.hide();
 
     }
-    public void cancel(View v){
-        incomeDialog.hide();
+    public void cancelExpense(View v){
         expenseDialog.hide();
+    }
+
+    public void cancelIncome(View v) {
+        incomeDialog.hide();
     }
 }

@@ -126,7 +126,7 @@
             android:layout_marginStart="130dp"
             android:layout_marginTop="300dp"
             android:background="@android:color/transparent"
-            android:onClick="cancel"
+            android:onClick="cancelIncome"
             android:text="@string/cancel"
             android:textColor="@color/colorPrimaryDark" />
 

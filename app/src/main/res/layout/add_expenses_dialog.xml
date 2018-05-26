@@ -126,7 +126,7 @@
             android:background="@android:color/transparent"
             android:text="@string/cancel"
             android:textColor="@color/colorPrimaryDark"
-            android:onClick="Cancel"/>
+            android:onClick="cancelExpense"/>
 
 
     </android.support.v7.widget.CardView>
