@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
 
-        //show database all
+        /* show database all */
 
         for(int i=1;i<=mydb.getTransactionRecordCount();i++){
             datas.add(mydb.getTransactionRecord(i));
@@ -71,14 +71,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /* int id = item.getItemId();
-
-        switch (id) {
-            case R.id.transaction_id :
-                Toast.makeText(this, "Transaction clicked", Toast.LENGTH_SHORT).show();
-            case R.id.categories_id :
-                Toast.makeText(this, "Categories clicked", Toast.LENGTH_SHORT).show();
-        } */
         return super.onOptionsItemSelected(item);
     }
 
