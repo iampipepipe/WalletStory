@@ -1,8 +1,5 @@
 package com.example.x.walletstory;
 
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 

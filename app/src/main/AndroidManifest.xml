@@ -44,6 +44,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.x.walletstory.MainActivity" />
         </activity>
+        <activity
+            android:name=".TransactionActivity"
+            android:label="@string/title_activity_transaction"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.x.walletstory.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -45,4 +45,5 @@
     <string name="dd">Day</string>
     <string name="yyyy">Year</string>
     <string name="mm">Month</string>
+    <string name="title_activity_transaction">Transactions</string>
 </resources>

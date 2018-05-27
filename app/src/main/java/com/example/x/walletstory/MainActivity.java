@@ -19,9 +19,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import android.widget.Toast;
-
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -80,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (id) {
             case R.id.transaction_id :
-                Toast.makeText(this, "Transaction clicked", Toast.LENGTH_SHORT).show();
+                Intent transaction = new Intent();
+                transaction.setClass(MainActivity.this, TransactionActivity.class);
+                startActivity(transaction);
                 break;
             case R.id.categories_id :
                 Intent categories = new Intent();

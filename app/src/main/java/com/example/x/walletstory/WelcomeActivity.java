@@ -102,6 +102,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         }
+
         editor.putInt("counter",++counter);
         editor.commit();
 
@@ -141,8 +142,7 @@ public class WelcomeActivity extends AppCompatActivity {
         /* Layouts of all welcome sliders */
         layouts = new int[] {
                 R.layout.welcome_slide1,
-                R.layout.welcome_slide2,
-                R.layout.welcome_slide3 };
+                R.layout.welcome_slide2 };
 
         /* Making notification bar transparent */
         changeStatusBarColor();
