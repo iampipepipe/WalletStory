@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (id) {
             case R.id.transaction_id :
                 Intent transaction = new Intent();
-                transaction.setClass(MainActivity.this, TransactionActivity.class);
+                transaction.setClass(MainActivity.this, MainActivity.class);
                 startActivity(transaction);
                 break;
             case R.id.categories_id :
